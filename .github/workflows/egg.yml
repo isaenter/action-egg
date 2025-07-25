@@ -4,3 +4,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
+      - uses: actions/checkout@v3
+      - run: ls
+
+  job2:
+    runs-on: windows-latest
+    steps:
+      - run: node --version
