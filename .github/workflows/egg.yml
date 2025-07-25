@@ -7,14 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name:: 显示当前目录
+      - name: 显示当前目录
         run: pwd
-      - uses: actions/checkout@v3
-      - run: ls
       - name: 查看node版本
         run: node --version
-
-  job2:
-    runs-on: windows-latest
-    steps:
-      - run: node --version
+      - name: 安装依赖
+        run: npm install
