@@ -3,4 +3,4 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - uses: pwd
+      - run: pwd
