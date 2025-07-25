@@ -6,6 +6,8 @@ jobs:
       - run: pwd
       - uses: actions/checkout@v3
       - run: ls
+      - name: 查看node版本
+      - run: node --version
 
   job2:
     runs-on: windows-latest
