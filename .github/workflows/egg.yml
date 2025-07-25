@@ -1,6 +1,9 @@
 name: 测试action
 on: push
 
+permissions:
+  contents: write
+
 jobs:
   job1:
     name: 工作流1
