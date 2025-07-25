@@ -1,9 +1,14 @@
+name: 测试action
 on: push
+
 jobs:
   job1:
+    name: 工作流1
     runs-on: ubuntu-latest
+
     steps:
-      - run: pwd
+      - name:: 显示当前目录
+        run: pwd
       - uses: actions/checkout@v3
       - run: ls
       - name: 查看node版本
