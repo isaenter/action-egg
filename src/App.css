@@ -1,42 +1,177 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Handsontable 样式优化 */
+.handsontable {
+  font-size: 13px;
+}
+
+.handsontable th {
+  background-color: var(--color-fill-2);
+  color: var(--color-text-1);
+  font-weight: 600;
+}
+
+.handsontable td {
+  border-color: var(--color-border-2);
+}
+
+.handsontable .currentRow {
+  background-color: var(--color-primary-light-1);
+}
+
+.handsontable .currentCol {
+  background-color: var(--color-primary-light-1);
+}
+
+/* 排班日历自定义样式 */
+.arco-calendar-cell {
+  position: relative;
+}
+
+.arco-calendar-date {
+  margin-bottom: 4px;
+}
+
+/* 考勤分析图表容器 */
+.chart-container {
+  min-height: 400px;
+  width: 100%;
+}
+
+/* 响应式布局优化 */
+@media (max-width: 768px) {
+  .arco-layout-sider {
+    position: fixed;
+    z-index: 1001;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .arco-layout-sider.arco-layout-sider-collapsed {
+    transform: translateX(0);
+  }
+  
+  .arco-layout-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* 状态标签颜色优化 */
+.status-tag-normal {
+  background-color: var(--color-success-light-1);
+  color: var(--color-success-6);
+}
+
+.status-tag-late {
+  background-color: var(--color-danger-light-1);
+  color: var(--color-danger-6);
+}
+
+.status-tag-early-leave {
+  background-color: var(--color-warning-light-1);
+  color: var(--color-warning-6);
+}
+
+.status-tag-absent {
+  background-color: var(--color-fill-3);
+  color: var(--color-text-3);
+}
+
+.status-tag-overtime {
+  background-color: var(--color-primary-light-1);
+  color: var(--color-primary-6);
+}
+
+/* 表格行悬浮效果优化 */
+.arco-table-tbody .arco-table-tr:hover .arco-table-td {
+  background-color: var(--color-fill-1);
+}
+
+/* 卡片阴影效果 */
+.arco-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border-1);
+}
+
+.arco-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* 统计数字样式 */
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* 按钮组间距优化 */
+.arco-btn-group .arco-btn + .arco-btn {
+  margin-left: 8px;
+}
+
+/* 面包屑样式优化 */
+.arco-breadcrumb {
+  font-size: 14px;
+}
+
+.arco-breadcrumb-item-link {
+  color: var(--color-text-2);
+}
+
+/* 加载状态样式 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* 空状态样式 */
+.empty-state {
   text-align: center;
+  padding: 40px 20px;
+  color: var(--color-text-3);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.empty-state-text {
+  font-size: 14px;
 }
